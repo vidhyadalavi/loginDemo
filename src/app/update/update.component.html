@@ -1,0 +1,36 @@
+<p>update works!</p>
+<div class="container-fluid w-25">
+    <div class="form-wrap">
+        <div class="fs-2 fw-bold text-center ">Sign-Up</div>
+        <form [formGroup]="updatefrm" (ngSubmit)="updateFrmFun()">
+            <div class="form-group">
+                <label for="">First Name : <span style="color: red;">*</span> </label>
+                <input type="text" class="form-control" formControlName="fname" required [ngClass]="{'is-invalid':isSubmitted && f.fname.errors}">
+                <div *ngIf="isSubmitted && f.fname.errors?.required" class="invalid-feedback">First name is required..</div>
+            </div>
+            <div class="form-group">
+                <label for="">Last Name : <span style="color: red;">*</span> </label>
+                <input type="text" class="form-control" formControlName="lname" required [ngClass]="{'is-invalid':isSubmitted && f.lname.errors}">
+                <div *ngIf="isSubmitted && f.lname.errors?.required" class="invalid-feedback">Last name is required..</div>
+            </div>
+            <div class="form-group">
+                <label for="">Username : <span style="color: red;">*</span> </label>
+                <input type="text" class="form-control" formControlName="username" required [ngClass]="{'is-invalid':isSubmitted && f.username.errors}">
+                <div *ngIf="isSubmitted && f.username.errors?.required" class="invalid-feedback">Username is required..</div>
+            </div>
+            <div class="form-group">
+                <label for="">Password : <span style="color: red;">*</span> </label>
+                <input type="password" class="form-control" formControlName="pass" required [ngClass]="{'is-invalid':isSubmitted && f.pass.errors}">
+                <div *ngIf="isSubmitted && f.pass.errors?.required" class="invalid-feedback">Password is required..</div>
+            </div>
+            <div class="form-group">
+                <label for="">Role : <span style="color: red;">*</span> </label>
+                <input type="text" class="form-control" formControlName="role" required [ngClass]="{'is-invalid':isSubmitted && f.role.errors}">
+                <div *ngIf="isSubmitted && f.role.errors?.required" class="invalid-feedback">Username is required..</div>
+            </div>
+            <div class="btn d-flex justify-content-center">
+                <input type="submit" class="btn btn-success px-3 py-2" value="Update">
+            </div>                      
+        </form>
+    </div>
+</div>

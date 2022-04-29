@@ -1,0 +1,31 @@
+<p>user works!</p>
+<div class="container">
+<div class="fs-2 fw-bold text-capitalize  text-white bg-primary  p-3">
+    welcome {{gotUser.fname}}  to the user profile!!!
+<div class="float-end">
+    <button pButton type="button" (click)="logOutfun()" class="p-button-raised p-button-rounded p-button-info text-white">LogOut</button>
+</div>
+</div>
+<div class="table-wrap">
+    <table class=" table table-bordered alert alert-primary">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username </th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Edit</th>
+            </tr>
+            <tr>
+                <td>{{gotUser.id}}</td>
+                <td>{{gotUser.fname}}</td>
+                <td>{{gotUser.lname}}</td>
+                <td>{{gotUser.username}}</td>
+                <td>{{gotUser.pass}}</td>
+                <td>{{gotUser.role}}</td>                
+                <td><button pButton type="button" (click)="onEdit(gotUser.id, gotUser)" class="p-button-success">Edit</button></td>
+            </tr>
+    </table>
+</div>
+</div>

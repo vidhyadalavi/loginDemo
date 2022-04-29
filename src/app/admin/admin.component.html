@@ -1,0 +1,33 @@
+<p>admin works!</p>
+<div class="container">
+    <div class="fs-2 fw-bold text-capitalize text-warning bg-danger p-3">
+        welcome to the admin profile!!
+        <div class="float-end">
+            <button pButton type="button" (click)="createFun()" class="p-button-help">Create</button>
+        </div>
+    </div>    
+    <div class="table-wrap">
+        <table class="table table-bordered alert alert-danger">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username Name</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let dt of listData">
+                <td>{{dt.id}}</td>
+                <td>{{dt.fname}}</td>
+                <td>{{dt.lname}}</td>
+                <td>{{dt.username}}</td>
+                <td>{{dt.pass}}</td>
+                <td>{{dt.role}}</td>
+                <td><button pButton type="button" (click)="onEdit(dt.id, dt)" class="p-button-info">Edit</button></td>
+                <td><button pButton type="button" (click)="onDelete(dt.id)"  class="p-button-secondary">Delete</button></td>
+            </tr>
+        </table>
+    </div>   
+</div>
